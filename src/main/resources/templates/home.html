@@ -1,0 +1,18 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/" th:method="post" th:object="${newUser}">
+    <label for="name">Name</label>
+    <input id="name" type="text" th:value="${newUser.name}" th:field="*{name}"/>
+    <button type="submit">Send</button>
+</form>
+
+<div th:each="user : ${userList}">
+    <p th:text="${user.name}"></p>
+</div>
+</body>
+</html>
